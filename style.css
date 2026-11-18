@@ -1,0 +1,269 @@
+/* MHC COG — Making Heaven Crowded */
+
+:root {
+  --bg: #f3eee4;
+  --bg-deep: #e8e0d2;
+  --paper: #fffcf6;
+  --ink: #241f19;
+  --ink-soft: #5c554c;
+  --line: #d6ccbc;
+  --accent: #7a4a24;
+  --accent-soft: #c4a07a;
+  --focus: #7a4a24;
+  --radius: 14px;
+  --measure: 40rem;
+  --space: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 500px at 50% -80px, rgba(196, 160, 122, 0.18), transparent 60%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+}
+
+h1 {
+  font-size: clamp(2.35rem, 6vw, 4rem);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+li + li {
+  margin-top: 0.4rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 10;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.hero,
+main,
+footer {
+  width: min(68rem, calc(100% - 2 * var(--space)));
+  margin-inline: auto;
+}
+
+.hero {
+  padding: clamp(3.5rem, 10vw, 6.5rem) 0 2.75rem;
+  text-align: center;
+  max-width: 46rem;
+}
+
+.brand {
+  margin: 0 0 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.lede {
+  margin: 1.15rem auto 0;
+  max-width: 34rem;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+}
+
+.how {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 2px);
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.35rem, 3vw, 2.25rem);
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  box-shadow: 0 1px 0 rgba(36, 31, 25, 0.04);
+}
+
+.how p {
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
+.principles {
+  list-style: none;
+  padding: 0;
+  margin: 1.15rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 0.85rem 1.5rem;
+}
+
+.principles li {
+  margin: 0;
+  padding-left: 1.35rem;
+  position: relative;
+}
+
+.principles li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.55rem;
+  height: 1px;
+  background: var(--accent-soft);
+}
+
+.companions {
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+}
+
+.companions h2 {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20.5rem), 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.45rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 0 rgba(36, 31, 25, 0.04);
+}
+
+.card-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.card > p {
+  color: var(--ink-soft);
+}
+
+.card ul {
+  margin-top: 0.35rem;
+  color: var(--ink);
+  flex: 1;
+}
+
+.note {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 0 2.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 40rem) {
+  body {
+    font-size: 1rem;
+  }
+
+  .principles {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --line: #8a8173;
+    --ink-soft: #3d3832;
+  }
+
+  .card,
+  .how {
+    border-width: 2px;
+  }
+}
